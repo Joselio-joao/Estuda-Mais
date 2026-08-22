@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-      - name: Ativar pnpm
-        run: corepack enable
+      - name: Instalar pnpm
+        run: npm install --global pnpm@9.12.0
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
       - name: Verificar tipos
