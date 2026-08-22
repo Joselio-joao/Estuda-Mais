@@ -1,0 +1,57 @@
+name: Publicar versão web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Compilar interface web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter o código
+        uses: actions/checkout@v6
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar pnpm
+        run: npm install --global pnpm@9.12.0
+      - name: Instalar dependências
+        run: pnpm install --frozen-lockfile
+      - name: Configurar GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Exportar versão web estática
+        env:
+          EXPO_PUBLIC_WEB_BASE_URL: /${{ github.event.repository.name }}
+          EXPO_PUBLIC_WEB_DEMO: "true"
+        run: pnpm expo export -p web
+      - name: Preparar artefacto estático
+        run: touch dist/.nojekyll
+      - name: Carregar artefacto do GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar artefacto
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -30,6 +30,12 @@ Aplicação móvel educacional e social para estudantes em Angola, construída c
 | `pnpm lint` | regras do Expo |
 | `pnpm build` | compilação da API para produção |
 
+## Versão web pública
+
+A cada alteração em `main`, o fluxo **Publicar versão web** cria uma exportação estática Expo e publica-a no GitHub Pages. A versão pública é uma demonstração navegável da interface inicial: a autenticação, os dados académicos e as ações que dependem de API continuam a exigir um serviço próprio, configurado com as variáveis documentadas neste repositório.
+
+O endereço esperado do site é `https://joselio-joao.github.io/Estuda-Mais/`.
+
 ## Variáveis e segredos
 
 O ficheiro `.env.example` documenta as variáveis necessárias sem valores sensíveis. Mantenha `.env`, `.project-config.json`, chaves de assinatura, certificados e ficheiros de credenciais fora do Git. Antes da publicação fora do ambiente atual, substitua os adaptadores de autenticação, armazenamento, IA e notificações por serviços controlados pelo proprietário.
