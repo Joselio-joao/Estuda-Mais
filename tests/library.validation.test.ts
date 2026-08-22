@@ -1,0 +1,4 @@
+import { describe, expect, it } from "vitest";
+import { z } from "zod";
+const resourceSchema = z.object({ type: z.enum(["book", "material", "video"]), title: z.string().trim().min(3), description: z.string().trim().min(10), subject: z.string().min(2), author: z.string().min(2), access: z.enum(["public", "community", "group"]) });
+describe("library resource validation", () => { it("accepts a public video lesson", () => { expect(resourceSchema.parse({ type: "video", title: "Derivadas — Aula 02", description: "Explicação prática de derivadas com exercícios orientados.", subject: "Matemática", author: "Professor João", access: "public" }).type).toBe("video"); }); it("rejects an incomplete material", () => { expect(() => resourceSchema.parse({ type: "book", title: "A", description: "Curto", subject: "", author: "", access: "public" })).toThrow(); }); });

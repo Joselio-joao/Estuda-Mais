@@ -1,0 +1,89 @@
+# Project TODO
+
+- [x] Documentar arquitetura da aplicação, modelo de dados, ecrãs, fluxo de navegação, componentes e plano da Fase 1.
+- [x] Definir a identidade visual Estuda+ e criar o ícone exclusivo da aplicação.
+- [x] Implementar ecrã de abertura e autenticação de entrada.
+- [x] Implementar cadastro em duas etapas com dados pessoais e académicos.
+- [x] Implementar navegação inferior com Início, Comunidades, Criar, Aprender e Perfil.
+- [x] Implementar ecrãs de estado inicial para áreas planeadas para fases posteriores.
+- [x] Implementar perfil académico editável e definições de conta.
+- [x] Configurar persistência de utilizador, perfil académico, disciplinas e preferências na base de dados.
+- [x] Validar autenticação, cadastro, perfil, sessão e navegação da Fase 1.
+- [x] Preparar entrega da Fase 1 e aguardar aprovação antes da Fase 2.
+- [x] Optimizar os recursos nativos do ícone Estuda+ para permitir a gravação da versão.
+- [x] Definir o modelo de publicações, comentários, reacções, partilhas e guardados da Fase 2.
+- [x] Implementar API, persistência e autorização para o feed e respectivas interações.
+- [x] Implementar o feed personalizado e cartões de publicação académica.
+- [x] Implementar criação de publicações de texto, pergunta, foto, vídeo e documento.
+- [x] Implementar gostar, comentar, partilhar e guardar publicações.
+- [x] Validar e entregar a Fase 2 para aprovação antes da Fase 3.
+- [x] Definir o modelo de comunidades, grupos de estudo, membros, conversas e mensagens da Fase 3.
+- [x] Implementar a persistência e as rotas autorizadas para comunidades, adesões e conversas.
+- [x] Implementar descoberta, pesquisa e participação em comunidades académicas.
+- [x] Implementar criação e páginas de grupos de estudo públicos e privados.
+- [x] Implementar mensagens directas e conversas de grupo com texto.
+- [x] Validar e entregar a Fase 3 para aprovação antes da Fase 4.
+- [x] Definir o modelo de livros, materiais, videoaulas, progresso e biblioteca pessoal da Fase 4.
+- [x] Implementar catálogo, gestão de itens guardados e autorizações da Biblioteca.
+- [x] Implementar Biblioteca digital com filtros de disciplina, nível e tipo de recurso.
+- [x] Implementar páginas de detalhe de livros e materiais académicos.
+- [x] Implementar catálogo e reprodução de videoaulas com progresso por estudante.
+- [x] Ligar materiais da Biblioteca a comunidades e grupos de estudo.
+- [x] Validar e entregar a Fase 4 para aprovação antes da Fase 5.
+- [x] Definir conversas, planos de estudo e limites pedagógicos seguros do Professor IA.
+- [x] Implementar persistência, autorização e API do Professor IA contextual ao perfil académico.
+- [x] Implementar conversa do Professor IA com explicações, resolução guiada, resumos e testes.
+- [x] Implementar planos de estudo pessoais e acções rápidas por disciplina.
+- [x] Validar e entregar a Fase 5 para aprovação antes da Fase 6.
+- [x] Definir competições, inscrições, estados de participação e regras da Fase 6.
+- [x] Implementar persistência, API e autorizações de competições e inscrições.
+- [x] Implementar descoberta e pesquisa de competições académicas.
+- [x] Implementar páginas de detalhe, inscrição e acompanhamento de participação.
+- [x] Ligar competições a comunidades, grupos de estudo e perfil académico.
+- [x] Validar e entregar a Fase 6 para aprovação.
+- [x] Definir submissões, avaliações, rankings e certificados digitais da Fase 7.
+- [x] Implementar persistência, API e autorizações para respostas e avaliações de competições.
+- [x] Implementar envio de respostas e acompanhamento de estado para participantes.
+- [x] Implementar avaliação por critérios e ranking ordenado por pontuação.
+- [x] Implementar certificado digital para participações avaliadas.
+- [x] Validar e entregar a Fase 7 para aprovação.
+- [x] Definir eventos de notificação, anexos de submissão e distinções académicas da Fase 8.
+- [x] Implementar persistência, API e autorizações para notificações e anexos de submissão.
+- [x] Implementar centro de notificações e estados de leitura.
+- [x] Implementar anexos de documento, imagem e vídeo nas respostas de competições.
+- [x] Implementar medalhas, conquistas e certificados recentes no perfil.
+- [x] Validar e entregar a Fase 8 para aprovação.
+- [x] Definir eventos push, certificados exportáveis e regras de desafios semanais da Fase 9.
+- [x] Implementar persistência e API para subscrições push e desafios semanais.
+- [x] Implementar notificações locais/push e preferências do estudante.
+- [x] Implementar exportação de certificados digitais em PDF.
+- [x] Implementar descoberta e participação em desafios semanais com medalhas temporárias.
+- [x] Validar e entregar a Fase 9 para aprovação.
+- [x] Recuperar o servidor de desenvolvimento e a pré-visualização interrompida durante a Fase 9.
+- [x] Definir regras de verificação pública de certificados, calendário mensal e publicação de notificações remotas.
+- [x] Implementar API pública de validação de certificados por código.
+- [x] Implementar calendário mensal e filtragem dos desafios semanais.
+- [x] Implementar interface pública de verificação e calendário de desafios.
+- [x] Documentar a preparação de notificações push remotas para a versão publicada.
+- [x] Validar e entregar a Fase 10 para aprovação.
+- [x] Definir permissões de moderação, indicadores de progresso e consentimento de relatórios da Fase 11.
+- [x] Implementar persistência, API e autorizações de denúncias, revisão administrativa e consentimentos revogáveis.
+- [x] Implementar moderação de publicações e triagem de denúncias no painel móvel do proprietário; moderação directa de comunidades, desafios e comentários fica para uma etapa futura.
+- [x] Implementar análise de progresso académico por disciplina no perfil do estudante.
+- [x] Implementar gestão de consentimentos de relatório por destinatário autorizado; a entrega do relatório a destinatários sem conta fica para uma etapa futura.
+- [ ] Criar um portal autenticado ou integração de entrega para destinatários autorizados consultarem relatórios de progresso.
+- [x] Validar e entregar a Fase 11 para aprovação.
+- [x] Implementar denúncias enviadas por estudantes, estados de revisão e consentimento revogável para relatórios.
+- [ ] Definir propriedade da aplicação, papéis administrativos, banimentos, auditoria e alojamento autónomo.
+- [ ] Implementar painel do proprietário com moderação, banimentos e histórico de acções.
+- [ ] Preparar exportação, configuração e documentação para dados e alojamento sob controlo do criador.
+- [ ] Validar os controlos do proprietário e entregar o plano de transição autónoma.
+- [x] Mapear dependências técnicas, dados, permissões e serviços substituíveis para transferência independente de alojamento.
+- [x] Preparar inventário de variáveis de ambiente, dados e ficheiros a exportar.
+- [x] Produzir guia de transferência, configuração externa e operação do proprietário.
+- [x] Definir o modelo de painel do proprietário, moderação, banimentos e auditoria para a infraestrutura futura.
+- [x] Validar e entregar o pacote de transição autónoma ao criador.
+- [x] Definir permissões móveis do proprietário e o percurso de testes controlados.
+- [x] Implementar painel móvel do proprietário para moderação, contas e banimentos.
+- [x] Preparar guia de instalação e distribuição de testes para Android e iPhone.
+- [x] Validar o controlo móvel e entregar o plano de testes e publicação.
