@@ -2,7 +2,23 @@ import { and, desc, eq, gt, like, ne, or } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { academicProfiles, competitionCertificates, competitionEnrollments, competitionSubmissionAttachments, competitionSubmissions, competitions, communities, communityMembers, conversationMembers, conversations, deviceNotificationSettings, InsertUser, learningResources, messages, notifications, ownerAuditLogs, postComments, postLikes, posts, postSaves, postShares, profileSubjects, profiles, progressReportGrants, resourceProgress, resourceSaves, safetyReports, studentBadges, studyGroupMembers, studyGroups, studyPlans, teacherMessages, teacherSessions, userPreferences, users, weeklyChallengeAwards, weeklyChallengeParticipants, weeklyChallenges } from "../drizzle/schema";
 let _db: ReturnType<typeof drizzle> | null = null;
-export async function getDb() { if (!_db && process.env.DATABASE_URL) _db = drizzle(process.env.DATABASE_URL); return _db; }
+
+function getDatabaseConnection() {
+  const uri = process.env.DATABASE_URL!;
+  if (process.env.DATABASE_SSL !== "true") return uri;
+
+  const ca = process.env.DATABASE_CA_PEM?.replace(/\\n/g, "\n");
+  return {
+    uri,
+    ssl: {
+      ...(ca ? { ca } : {}),
+      rejectUnauthorized: true,
+      verifyIdentity: true,
+    },
+  };
+}
+
+export async function getDb() { if (!_db && process.env.DATABASE_URL) _db = drizzle({ connection: getDatabaseConnection() }); return _db; }
 export async function upsertUser(user: InsertUser) { const db = await getDb(); if (!db) return; const isBootstrapOwner = Boolean(process.env.BOOTSTRAP_OWNER_EMAIL && user.email && process.env.BOOTSTRAP_OWNER_EMAIL.toLowerCase() === user.email.toLowerCase()); const values: InsertUser = { openId: user.openId, name: user.name ?? null, email: user.email ?? null, loginMethod: user.loginMethod ?? null, role: isBootstrapOwner ? "admin" : user.role ?? "user", lastSignedIn: user.lastSignedIn ?? new Date() }; await db.insert(users).values(values).onDuplicateKeyUpdate({ set: { name: values.name, email: values.email, loginMethod: values.loginMethod, lastSignedIn: values.lastSignedIn, ...(isBootstrapOwner ? { role: "admin" as const } : {}) } }); }
 export async function getUserByOpenId(openId: string) { const db = await getDb(); if (!db) return undefined; return (await db.select().from(users).where(eq(users.openId, openId)).limit(1))[0]; }
 export type PersonalProfileInput = { fullName: string; dateOfBirth: string; province: string; avatarUrl?: string | null }; export type AcademicProfileInput = { educationLevel: string; classYear: string; course: string; institution: string; subjects: string[] };

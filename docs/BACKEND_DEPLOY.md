@@ -14,6 +14,19 @@ Crie um serviço web no Render a partir de `Joselio-joao/Estuda-Mais`. O Render 
 | Base de dados | MySQL 8+ externo, configurado em `DATABASE_URL` |
 | Origem web permitida | `https://joselio-joao.github.io` em `CORS_ORIGIN` |
 
+## Aiven for MySQL
+
+O [Aiven for MySQL](https://aiven.io/free-mysql-database) é uma opção gerida compatível com este projeto. Depois de criar o serviço Aiven, abra **Connection information** e guarde os dados sem os publicar. No Render, adicione os campos seguintes:
+
+| Variável Render | Origem/valor |
+| --- | --- |
+| `DATABASE_URL` | A URI MySQL completa mostrada no Aiven, com utilizador, palavra-passe, host, porta e base de dados |
+| `DATABASE_SSL` | `true` |
+| `DATABASE_CA_PEM` | Conteúdo do certificado CA descarregado do Aiven; substitua as quebras de linha por `\n` |
+| `CORS_ORIGIN` | `https://joselio-joao.github.io` |
+
+O servidor valida o certificado e a identidade TLS quando `DATABASE_SSL=true`. Não remova essa validação nem use `rejectUnauthorized=false` em produção.
+
 ## Variáveis obrigatórias
 
 No painel **Environment** do serviço, defina `DATABASE_URL`, `CORS_ORIGIN` e os valores de autenticação OIDC. O Render gera `JWT_SECRET` através de `render.yaml`, mas pode substituí-lo por um segredo gerido pela equipa.
