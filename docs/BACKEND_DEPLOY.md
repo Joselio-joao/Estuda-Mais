@@ -33,7 +33,7 @@ No painel **Environment** do serviço, defina `DATABASE_URL`, `CORS_ORIGIN` e os
 
 > `CORS_ORIGIN` não deve usar um asterisco em produção. Indique o domínio exato da interface: `https://joselio-joao.github.io`.
 
-Depois da implantação, abra `https://<serviço>.onrender.com/api/health`. A resposta deve conter `{"ok":true,...}`. Só então execute as migrações contra a base de dados de produção a partir de um ambiente seguro com `DATABASE_URL` definido: `pnpm db:push`.
+Depois da implantação, abra `https://<serviço>.onrender.com/api/health`. A resposta deve conter `{"ok":true,...}`. Só então execute as migrações uma vez. No **Shell** do serviço Render, execute `pnpm db:migrate`. Este comando aplica os SQL versionados com a mesma configuração TLS da API; não use `pnpm db:push` em produção, pois esse comando também tenta gerar novos ficheiros de migração.
 
 ## Ligar o GitHub Pages à API
 
