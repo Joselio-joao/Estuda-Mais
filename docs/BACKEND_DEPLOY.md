@@ -33,7 +33,11 @@ No painel **Environment** do serviço, defina `DATABASE_URL`, `CORS_ORIGIN` e os
 
 > `CORS_ORIGIN` não deve usar um asterisco em produção. Indique o domínio exato da interface: `https://joselio-joao.github.io`.
 
-Depois da implantação, abra `https://<serviço>.onrender.com/api/health`. A resposta deve conter `{"ok":true,...}`. Só então execute as migrações uma vez. No **Shell** do serviço Render, execute `pnpm db:migrate`. Este comando aplica os SQL versionados com a mesma configuração TLS da API; não use `pnpm db:push` em produção, pois esse comando também tenta gerar novos ficheiros de migração.
+Depois da implantação, abra `https://<serviço>.onrender.com/api/health`. A resposta deve conter `{"ok":true,...}`. Se o plano Render não disponibilizar Shell, crie ou edite a variável `RUN_MIGRATIONS` e defina-a temporariamente como `true`. A reinicialização seguinte aplica os SQL versionados **antes** de a API abrir a porta. Assim que os logs indicarem `[database] migrations completed`, altere `RUN_MIGRATIONS` de volta para `false` e guarde as alterações.
+
+> As migrações Drizzle são versionadas e registadas na própria base de dados, mas `RUN_MIGRATIONS` não deve permanecer ativo em produção. Mantenha-o como `false` depois da primeira inicialização ou de cada atualização de esquema planeada.
+
+Em planos que disponibilizam Shell, também pode executar `pnpm db:migrate`. Este comando reutiliza a mesma ligação TLS da API; não use `pnpm db:push` em produção, pois esse comando também tenta gerar novos ficheiros de migração.
 
 ## Ligar o GitHub Pages à API
 

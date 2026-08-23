@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+import { runDatabaseMigrations } from "./migrate";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -28,6 +29,12 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 }
 
 async function startServer() {
+  if (process.env.RUN_MIGRATIONS === "true") {
+    console.log("[database] applying versioned migrations before API startup");
+    await runDatabaseMigrations();
+    console.log("[database] migrations completed");
+  }
+
   const app = express();
   const server = createServer(app);
   const allowedOrigins = (process.env.CORS_ORIGIN ?? "")

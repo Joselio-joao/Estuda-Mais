@@ -18,6 +18,7 @@ COPY --from=build /app/dist ./dist
 COPY --from=build /app/drizzle ./drizzle
 COPY --from=build /app/scripts/migrate.ts ./scripts/migrate.ts
 COPY --from=build /app/server/db.ts ./server/db.ts
+COPY --from=build /app/server/_core/migrate.ts ./server/_core/migrate.ts
 COPY --from=build /app/drizzle/schema.ts ./drizzle/schema.ts
 EXPOSE 3000
 CMD ["pnpm", "start"]
