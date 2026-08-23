@@ -38,7 +38,9 @@ jobs:
           EXPO_PUBLIC_WEB_DEMO: "true"
         run: pnpm expo export -p web
       - name: Preparar artefacto estático
-        run: touch dist/.nojekyll
+        run: |
+          touch dist/.nojekyll
+          cp dist/index.html dist/404.html
       - name: Carregar artefacto do GitHub Pages
         uses: actions/upload-pages-artifact@v4
         with:
