@@ -55,7 +55,7 @@ function ExamplePostCard() {
 
 function StoryStrip({ onNavigate }: { onNavigate: (label: string) => void }) {
   const items: Array<{ label: string; icon: IconName; color: string }> = [{ label: "Criar", icon: "add", color: "#0D47A1" }, { label: "Notas", icon: "edit-note", color: "#E78D19" }, { label: "Dúvidas", icon: "help", color: "#6B49B9" }, { label: "Grupos", icon: "groups", color: "#159578" }, { label: "Materiais", icon: "auto-stories", color: "#1A8ECA" }];
-  return <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.storyStrip}>{items.map((item) => <View key={item.label} style={styles.storyItem}><CircleIcon icon={item.icon} color={item.color} size={52} /><Text style={styles.storyLabel}>{item.label}</Text></View>)}</ScrollView>;
+  return <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.storyStrip}>{items.map((item) => <Pressable key={item.label} accessibilityRole="button" onPress={() => onNavigate(item.label)} style={({ pressed }) => [styles.storyItem, pressed && styles.pressed]}><CircleIcon icon={item.icon} color={item.color} size={52} /><Text style={styles.storyLabel}>{item.label}</Text></Pressable>)}</ScrollView>;
 }
 
 function BackendStatus() {
