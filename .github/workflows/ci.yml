@@ -26,5 +26,12 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Verificar tipos
         run: pnpm check
+      - name: Compilar API
+        run: pnpm build
+      - name: Exportar interface web (modo de demonstração)
+        env:
+          EXPO_PUBLIC_WEB_DEMO: "true"
+          EXPO_PUBLIC_WEB_BASE_URL: /
+        run: pnpm expo export -p web
       - name: Executar testes
         run: pnpm test
