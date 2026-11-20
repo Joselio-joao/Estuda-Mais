@@ -39,7 +39,7 @@ async function startServer() {
   const server = createServer(app);
   const allowedOrigins = (process.env.CORS_ORIGIN ?? "")
     .split(",")
-    .map((origin) => origin.trim())
+    .map((origin: string) => origin.trim())
     .filter(Boolean);
 
   // Permit only explicitly configured production frontends; local development remains convenient.

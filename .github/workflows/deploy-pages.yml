@@ -2,7 +2,7 @@ name: Publicar versão web
 
 on:
   push:
-    branches: [main]
+    branches: [main, deployment/full-web-app]
   workflow_dispatch:
 
 permissions:

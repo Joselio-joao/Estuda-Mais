@@ -49,3 +49,7 @@ Consulte [docs/TRANSFER_GUIDE.md](docs/TRANSFER_GUIDE.md) para a estratégia de 
 ## Identidade do produto
 
 O Estuda+ adota uma interface mobile-first, em retrato, com Azul Estuda (`#0D47A1`), Azul Noite (`#06265C`) e Dourado Estuda (`#FFC107`). A referência completa de produto e interface está em [design.md](design.md).
+
+## Plano de publicação web funcional
+
+Consulte [docs/WEB_APP_DEPLOYMENT_PLAN.md](docs/WEB_APP_DEPLOYMENT_PLAN.md) para o estado verificado, arquitetura alvo, etapas de ligação ao backend e critérios de lançamento. A interface publicada ainda depende de configuração e validação do backend.
