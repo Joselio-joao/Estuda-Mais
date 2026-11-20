@@ -69,3 +69,13 @@ Para o Estuda+, o bloqueio atual não é simplesmente trocar GitHub Pages por ou
 ## Critério de conclusão
 
 A aplicação só será considerada funcional em produção depois de a web publicada usar uma API real, health check responder, autenticação e dados persistirem, os principais fluxos passarem testes de navegador e as regras de autorização/CORS/privacy estarem verificadas. Um build ou página que apenas abre não é suficiente.
+
+## Bloqueio de autenticação identificado no código
+
+A autenticação atual não é uma integração OIDC genérica pronta a apontar para qualquer fornecedor. O frontend usa `EXPO_PUBLIC_OAUTH_PORTAL_URL`, `EXPO_PUBLIC_OAUTH_SERVER_URL` e `EXPO_PUBLIC_APP_ID`; o backend usa o SDK de autenticação compatível com Manus e chama endpoints RPC específicos (`ExchangeToken` e `GetUserInfo`). A rota de callback depende desse contrato.
+
+Antes de colocar login público em produção, deve-se decidir entre (a) manter e configurar um fornecedor compatível, com domínio, aplicação/client ID, callback e credenciais autorizadas, ou (b) migrar para um fornecedor escolhido pelo proprietário (OIDC/OAuth2) e substituir o SDK/fluxo com testes de segurança. Não basta definir as URLs para valores arbitrários.
+
+A análise estática também observou que o parâmetro `state` usado no callback é descodificado como Base64 para obter o redirect URI. Base64 não oferece integridade/anti-CSRF. A validação de state e allowlist do redirect devem ser revistas antes de produção; esta observação não é confirmação de exploit e não foi alterado o fluxo de autenticação.
+
+**Status:** esta dependência impede considerar registo/login de produção pronto até fornecedor e configuração serem definidos e validados.
