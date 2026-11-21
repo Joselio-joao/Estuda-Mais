@@ -57,6 +57,21 @@ button{transition:background-color .15s,border-color .15s,color .15s,transform .
  body .mobileNav{display:flex!important}
  body.authLanding .mobileNav{display:none!important}
 }
+/* Definitive tablet/mobile layout: sidebar is never rendered as a content column below 900px. */
+@media(max-width:900px){
+ .layout{display:block!important;grid-template-columns:minmax(0,1fr)!important;margin:12px auto!important;padding:0 10px 105px!important}
+ .sidebar,body.drawerOpen .sidebar{display:none!important;position:static!important;width:auto!important;inset:auto!important;transform:none!important;z-index:auto!important}
+ .drawerBackdrop,body.drawerOpen .drawerBackdrop{display:none!important;position:static!important;inset:auto!important;z-index:auto!important}
+ .sidebarToggle{display:none!important}
+ .mobileNav{display:flex!important;position:fixed!important;bottom:0!important;left:0!important;right:0!important;z-index:50!important}
+ body.drawerOpen{overflow:auto!important}
+ .main{width:100%!important;min-width:0!important}
+ .right{display:none!important}
+ .top{gap:8px;padding:0 12px}
+ .searchTop{display:none!important}
+ .brand{min-width:0!important}
+}
+@media(max-width:900px){body.authLanding .mobileNav{display:none!important}}
 </style>
 </head>
 <body><div class="app">
