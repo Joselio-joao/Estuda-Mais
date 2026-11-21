@@ -1,5 +1,6 @@
 {
-  "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "EXPO_PUBLIC_WEB_DEMO=true pnpm exec expo export --platform web",
-  "outputDirectory": "dist"
+  "installCommand": "echo Static web demo - no package install required",
+  "buildCommand": "node scripts/build-web-demo.mjs",
+  "outputDirectory": "dist",
+  "cleanUrls": true
 }
