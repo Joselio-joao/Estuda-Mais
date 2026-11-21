@@ -39,18 +39,23 @@ async function startServer() {
   const server = createServer(app);
   const allowedOrigins = (process.env.CORS_ORIGIN ?? "")
     .split(",")
-    .map((origin) => origin.trim())
+    .map((origin: string) => origin.trim())
     .filter(Boolean);
 
   // Permit only explicitly configured production frontends; local development remains convenient.
   app.use((req, res, next) => {
     const origin = req.headers.origin;
-    const isAllowedOrigin = origin ? (process.env.NODE_ENV !== "production" || allowedOrigins.includes(origin)) : false;
+    const isAllowedOrigin = origin
+      ? process.env.NODE_ENV !== "production" || allowedOrigins.includes(origin)
+      : false;
     if (origin && isAllowedOrigin) {
       res.header("Access-Control-Allow-Origin", origin);
       res.header("Vary", "Origin");
     }
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, OPTIONS",
+    );
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept, Authorization",
@@ -84,7 +89,9 @@ async function startServer() {
   );
 
   const preferredPort = parseInt(process.env.PORT || "3000");
-  const port = process.env.PORT ? preferredPort : await findAvailablePort(preferredPort);
+  const port = process.env.PORT
+    ? preferredPort
+    : await findAvailablePort(preferredPort);
 
   if (port !== preferredPort) {
     console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
