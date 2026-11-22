@@ -17,6 +17,42 @@ body{background:var(--bg);color:var(--ink)}.top{height:60px;background:#fff;bord
 @media(max-width:900px){.layout{display:block;max-width:760px;margin:10px auto;padding:0 12px 100px}.sidebar{display:none}.main{width:100%}.top{height:58px;padding:0 10px;gap:8px}.brand{font-size:15px}.searchTop{display:none}.mobileNav{display:flex;position:fixed;left:0;right:0;bottom:0;justify-content:space-around}.drawerOpen .sidebar{display:flex;position:fixed;left:12px;top:68px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:40;width:min(300px,88vw);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px;box-shadow:0 12px 30px #0002}.drawerBackdrop{display:none;position:fixed;inset:58px 0 70px;z-index:39;background:#17203340;border:0}.drawerOpen .drawerBackdrop{display:block}.right{display:none}}
 @media(max-width:650px){.layout{padding:0 9px 100px}.card{padding:12px;margin-bottom:9px}.heading h1{font-size:20px}.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome{padding:15px}.authShell{display:block;max-width:470px;padding:10px;margin:8px auto}.authIntro{min-height:0;padding:19px;margin-bottom:11px}.authIntro h2{font-size:25px}.authCard{padding:18px}.whitePage{padding:16px}.siteFooter{display:block;padding:10px 12px 100px}.cookieBanner{bottom:84px;display:none;flex-direction:column;align-items:stretch}.cookieBanner.show{display:flex}.drawerOpen .sidebar{top:65px}.authHighlights{gap:6px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+/* ESTUDA+ FLAT LAYOUT: cards only for forms and consent UI */
+:root{--bg:#fff;--paper:#fff;--line:#e7e8eb;--shadow:none;--blue:#3566d6;--blueSoft:#eef3ff;--accent:#7653cf}
+body{background:#fff;color:#22252a}
+.layout{background:#fff}
+.card,.right .card,.whitePage,.profileHead,.listItem,.resource{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.card{padding:0!important;margin:0 0 20px!important;border-bottom:1px solid var(--line)!important}
+.welcome{background:transparent!important;padding:18px 0!important;border-bottom:1px solid var(--line)!important}
+.shortcuts{gap:0;margin:12px 0 20px}
+.shortcut{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:12px 5px!important;color:#46546a;border-right:1px solid var(--line)!important}
+.shortcut:last-child{border-right:0!important}
+.shortcut span{font-size:20px;color:var(--blue)}
+.compose{padding:12px 0!important;border-bottom:1px solid var(--line)!important}
+.composeTrigger{background:transparent!important;border:0!important;border-radius:0!important;border-bottom:1px solid var(--line)!important;padding:12px 2px!important}
+.post{padding:0!important;overflow:visible!important;border-bottom:1px solid var(--line)!important}
+.postHead{padding:14px 0!important}
+.tag{background:transparent!important;border-radius:0!important;padding:3px 0!important;margin:0!important;border-bottom:1px solid var(--line)!important}
+.postText{padding:10px 0 14px!important}
+.postIllustration{margin:0 0 12px!important;padding:18px 0!important;background:transparent!important;border:0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;border-radius:0!important}
+.postStats{padding:8px 0!important}
+.actions{padding:6px 0!important}
+.action{border-radius:0!important}
+.right .card{padding:0 0 18px!important;margin-bottom:18px!important;border-bottom:1px solid var(--line)!important}
+.listItem,.resource{padding:13px 0!important;border-bottom:1px solid var(--line)!important}
+.resourceIcon{width:auto!important;height:auto!important;border-radius:0!important;background:transparent!important;color:var(--blue)!important;padding:0!important}
+.tabs{border-bottom:1px solid var(--line);gap:12px}
+.pill{border:0!important;border-radius:0!important;background:transparent!important;padding:8px 4px!important}
+.pill.active{background:transparent!important;color:var(--blue)!important;border-bottom:2px solid var(--blue)!important}
+.profileHead{padding:14px 0!important;border-bottom:1px solid var(--line)!important}
+.whitePage{padding:0!important}
+.premiumPanel{display:none!important}
+.authIntro{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:12px 0!important;min-height:0!important}
+.authShell{gap:0!important}
+.authCard{background:#fff!important;border:1px solid #d9d9df!important;border-radius:18px!important;box-shadow:none!important}
+@media(max-width:650px){.card{padding:0!important;margin-bottom:18px!important}.welcome{padding:15px 0!important}.shortcut{padding:10px 4px!important}.authIntro{display:none!important}.authShell{display:block!important;padding:0 8px!important;margin:4px auto!important}.authCard{padding:20px!important;border-radius:18px!important}.whitePage{padding:0!important}}
+
 </style>
 </head>
 <body><div class="app">
