@@ -4,7 +4,6 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Platform } from "react-native";
-import { PublicWebExperience } from "@/components/public-web-experience";
 import { ActivityIndicator, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from "react-native";
 import { BrandMark } from "@/components/brand-mark";
 import { PostCard } from "@/components/post-card";
