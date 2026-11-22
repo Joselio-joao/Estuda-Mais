@@ -123,3 +123,6 @@
  .et-sidebar .et-nav-item-active svg{color:#2563bf!important}
  .et-sidebar .et-create-sidebar{cursor:pointer}
 }
+
+.et-mobile-create{display:none}
+@media(max-width:899px){.et-mobile-create{display:flex!important;flex:0 0 45px!important;width:45px!important;height:45px!important;min-height:45px!important;align-items:center!important;justify-content:center!important;border-radius:14px!important;background:#2563bf!important;box-shadow:0 3px 9px rgba(37,99,191,.18)!important}}
