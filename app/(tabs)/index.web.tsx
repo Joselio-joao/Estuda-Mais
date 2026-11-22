@@ -1,6 +1,6 @@
-import { PublicWebExperience } from "@/components/public-web-experience";
+import { AccountRequired } from "@/components/account-required";
 
-/** Lightweight web entry: keep native/auth/backend screens out of the initial Pages bundle. */
+/** Web entry currently opens the authentication panel before the academic feed. */
 export default function HomeScreenWeb() {
-  return <PublicWebExperience />;
+  return <AccountRequired />;
 }
