@@ -55,7 +55,7 @@ function FeedAction({ icon, label, onPress, active = false }: { icon: IconName; 
 }
 
 function NavItem({ icon, label, active, onPress }: NavItemProps) {
-  return <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: active }} onPress={onPress} style={({ pressed }) => [styles.navItem, pressed && styles.pressed]}><MaterialIcons name={icon} size={20} color={active ? "#0D47A1" : "#777777"} /><Text style={[styles.navLabel, active && styles.navLabelActive]}>{label}</Text></Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: active }} onPress={onPress} className={`et-nav-item${active ? " et-nav-item-active" : ""}`} style={({ pressed }) => [styles.navItem, pressed && styles.pressed]}><MaterialIcons name={icon} size={20} color={active ? "#0D47A1" : "#777777"} /><Text className={`et-nav-label${active ? " et-nav-label-active" : ""}`} style={[styles.navLabel, active && styles.navLabelActive]}>{label}</Text></Pressable>;
 }
 function ExamplePostCard({ saved, onSavedChange }: { saved: boolean; onSavedChange: (value: boolean) => void }) {
   const [liked, setLiked] = useState(false);
