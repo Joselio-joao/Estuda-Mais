@@ -24,8 +24,6 @@ const styles = StyleSheet.create({ content: { padding: 16, paddingBottom: 28, ga
 
 /** Public static-web demo: do not require authentication or a backend on GitHub Pages. */
 export default function HomeScreen() {
-  if (Platform.OS === "web") {
-    return <PublicWebExperience />;
-  }
+  if (Platform.OS === "web") { return <AccountRequired />; }
   return <AuthenticatedHomeScreen />;
 }
