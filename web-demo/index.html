@@ -105,6 +105,76 @@ button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-de
  .siteFooter{padding:18px 14px;display:block}.siteFooter div{margin-top:8px}.siteFooter button{margin:0 10px 0 0}
  .cookieBanner{left:10px;right:10px;bottom:10px;padding:13px}
 }
+
+/* POST-LOGIN: unify every section with the flat editorial layout */
+:root{--bg:#fff;--paper:#fff;--ink:#242830;--muted:#707783;--line:#e9eaed;--blue:#315f9f;--blueSoft:#f2f6fb;--gold:#b99a55;--green:#4f8064;--purple:#9471b8;--shadow:none}
+body,.app,.layout,.main,.page{background:#fff!important}
+.layout{max-width:1160px;grid-template-columns:205px minmax(0,1fr) 220px;gap:34px;margin:26px auto}
+.top{padding:0 28px;background:#fff}
+.sidebar{padding:0!important;background:transparent!important}
+.navbtn{padding:12px 6px!important;border-radius:0!important;background:transparent!important;color:#68717d!important;font-weight:500!important;border-bottom:1px solid transparent}
+.navbtn.active{color:#2e5d9d!important;font-weight:700!important;border-bottom-color:#e7eaf0!important}
+.navbtn:hover{background:transparent!important;color:#244e88!important}
+.heading{margin-bottom:24px!important}
+.heading h1{font-size:25px!important;font-weight:700!important;letter-spacing:-.55px!important}
+.heading p{font-size:13px!important;line-height:1.65!important;color:#7a808a!important}
+.card,.card.welcome,.card.compose,.card.post,.card.profileHead,.page .card,.right .card{border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+.card{padding:0!important;margin:0 0 26px!important}
+.welcome{border-bottom:1px solid var(--line)!important;padding:14px 0 20px!important}
+.welcome h2{font-size:18px!important;font-weight:650!important}
+.brandMark{color:#b99a55!important}
+.shortcuts{border-bottom:1px solid var(--line)!important;margin:18px 0 26px!important}
+.shortcut{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:12px 8px!important}
+.shortcut span{font-size:18px!important;color:#526f96!important}
+.compose{padding:14px 0!important;border-bottom:1px solid var(--line)!important}
+.composeTrigger{border:0!important;border-bottom:1px solid #e5e7eb!important;background:transparent!important;border-radius:0!important;padding:12px 0!important}
+.post{border-bottom:1px solid var(--line)!important;margin-bottom:24px!important;padding:0!important}
+.postHead{padding:16px 0 10px!important}
+.postText{padding:10px 0 16px!important}
+.postIllustration{margin:0 0 14px!important;padding:18px 0!important;background:transparent!important;border:0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;border-radius:0!important}
+.postStats{border-bottom:1px solid var(--line)!important}
+.actions{padding:5px 0!important}
+.action{background:transparent!important;border:0!important;border-radius:0!important}
+.tabs{border-bottom:1px solid var(--line)!important;gap:15px!important;margin:15px 0 20px!important}
+.pill{background:transparent!important;border:0!important;border-radius:0!important;padding:9px 2px!important}
+.pill.active{color:#315f9f!important;border-bottom:2px solid #315f9f!important;font-weight:700!important}
+.listItem,.resource{border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;padding:15px 0!important}
+.listItem:last-child,.resource:last-child{border-bottom:0!important}
+.resourceIcon{background:transparent!important;border:0!important;border-radius:0!important;color:#58779e!important;width:auto!important;height:auto!important}
+.join,.saveBtn{background:transparent!important;border:0!important;border-radius:0!important}
+.profileHead{padding:18px 0!important;border-bottom:1px solid var(--line)!important}
+.profileHead .avatar{background:#eef2f6!important;color:#53677f!important}
+.statline{gap:30px!important;padding:18px 0!important;border-bottom:1px solid var(--line)!important}
+.statline strong{font-size:21px!important;color:#315f9f!important;font-weight:650!important}
+.page h3{font-size:15px!important;font-weight:650!important}
+.page p{line-height:1.7}
+.createForm label{font-weight:650!important}
+.createForm textarea,.createForm input,.commentArea input,.authFields input{background:#fff!important;border:1px solid #cdd2d9!important;border-radius:7px!important;box-shadow:none!important}
+.createForm textarea:focus,.createForm input:focus,.commentArea input:focus,.authFields input:focus{border-color:#7391b8!important;box-shadow:0 0 0 2px #315f9f12!important}
+.primary{background:#315f9f!important;border-radius:5px!important;box-shadow:none!important}
+.commentArea{border-top:1px solid var(--line)!important}
+.right .card{border-bottom:1px solid var(--line)!important}
+.whitePage{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.mobileNav{background:#fff!important;border-top:1px solid var(--line)!important}
+.mobileNav button{background:transparent!important}
+.mobileNav button.active{color:#315f9f!important}
+.toast{border-radius:5px!important;box-shadow:none!important}
+.cookieBanner{border:1px solid var(--line)!important;border-radius:7px!important;box-shadow:none!important}
+@media(max-width:1000px){.layout{grid-template-columns:190px minmax(0,1fr);gap:24px}}
+@media(max-width:650px){
+ .layout{margin:8px auto!important;padding:0 16px 88px!important}
+ .heading{margin-bottom:20px!important}
+ .heading h1{font-size:23px!important}
+ .welcome{padding:13px 0 18px!important}
+ .shortcuts{margin:12px 0 22px!important}
+ .shortcut{padding:10px 4px!important}
+ .postHead{padding:13px 0 8px!important}
+ .profileHead{padding:16px 0!important}
+ .statline{gap:24px!important}
+ .createForm textarea,.createForm input{border-radius:7px!important}
+ .mobileNav{padding-top:7px!important}
+}
+
 </style>
 </head>
 <body><div class="app">
