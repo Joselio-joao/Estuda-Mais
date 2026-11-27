@@ -231,6 +231,30 @@ body,.app,.layout,.main,.page{background:#fff!important}
 .page:not(#auth) .shortcuts{border-bottom:1px solid #e8ebef!important}
 .page:not(#auth) .shortcut{border:0!important;box-shadow:none!important;border-radius:0!important}
 @media(max-width:650px){.page:not(#auth) .listItem{gap:10px}.page:not(#auth) .createForm{width:100%}.page:not(#auth) .statline{gap:18px!important}}
+
+/* SIMPLE PAGES — carry the login's calm, soft visual language */
+#definitions,#cookies,#terms,#responsibility,#profile{--simple-accent:#9275b8;--simple-soft:#f3edf9}
+#definitions .heading,#cookies .heading,#terms .heading,#responsibility .heading,#profile .heading{margin-bottom:24px!important}
+#definitions .heading h1,#cookies .heading h1,#terms .heading h1,#responsibility .heading h1,#profile .heading h1{font-size:clamp(24px,4vw,30px)!important;letter-spacing:-.6px!important;font-weight:730!important}
+#definitions .heading p,#cookies .heading p,#terms .heading p,#responsibility .heading p,#profile .heading p{font-size:13px!important;color:#7a7484!important}
+#definitions .whitePage,#cookies .whitePage,#terms .whitePage,#responsibility .whitePage{padding:4px 0 16px!important;max-width:780px}
+#definitions .whitePage h2,#cookies .whitePage h2,#terms .whitePage h2,#responsibility .whitePage h2{font-size:16px!important;font-weight:700!important;color:#292631!important;margin:26px 0 8px!important;border:0!important;padding:0!important;letter-spacing:-.15px}
+#definitions .whitePage h2:first-child,#cookies .whitePage h2:first-child,#terms .whitePage h2:first-child,#responsibility .whitePage h2:first-child{margin-top:0!important}
+#definitions .whitePage p,#cookies .whitePage p,#terms .whitePage p,#responsibility .whitePage p,#responsibility .whitePage li{font-size:14px!important;line-height:1.75!important;color:#66616e!important}
+#responsibility .whitePage ul{padding-left:22px;display:grid;gap:8px}
+#cookies [data-cookie-settings]{background:var(--simple-accent)!important;border-radius:24px!important;padding:10px 17px!important}
+#definitions .legalUpdated,#cookies .legalUpdated,#terms .legalUpdated,#responsibility .legalUpdated{border:0!important;margin-top:26px!important;padding:10px 0!important;color:#8b8295!important}
+#profile .profileHead{border:0!important;padding:18px 0 24px!important;gap:16px!important}
+#profile .profileHead .avatar{width:64px;height:64px;background:var(--simple-soft)!important;color:var(--simple-accent)!important;font-size:19px}
+#profile .profileHead h2{font-size:22px!important;font-weight:720!important;letter-spacing:-.3px!important}
+#profile .card h3{font-size:15px!important;font-weight:700!important;color:#292d36!important;margin-bottom:10px!important}
+#profile .card>p{color:#6d7480!important;line-height:1.7!important}
+#profile .statline{border-top:1px solid #ece8f1!important;border-bottom:0!important;padding:17px 0!important;gap:26px!important}
+#profile .statline strong{color:var(--simple-accent)!important;font-size:21px!important}
+#profile .listItem{border-bottom:1px solid #ece8f1!important;padding:13px 0!important}
+#profile .resourceIcon{color:var(--simple-accent)!important}
+#profile .saveBtn{color:var(--simple-accent)!important}
+@media(max-width:650px){#definitions .whitePage h2,#cookies .whitePage h2,#terms .whitePage h2,#responsibility .whitePage h2{margin-top:22px!important}#profile .profileHead{padding:14px 0 20px!important}}
 </style>
 </head>
 <body><div class="app">
